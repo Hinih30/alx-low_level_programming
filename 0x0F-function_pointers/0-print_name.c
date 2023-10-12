@@ -3,11 +3,13 @@
 
 /**
  * print_name_as_is - prints a name
- * @name: name of the person
+ * @name: string to print
+ * @f: pointer to the printing function
  *
  * Return: Nothing.
  */
-void print_name_as_is(char *name)
+void print_name(char *name, void (*f)(char *))
 {
-	printf("Hello, my name is %s\n", name);
+	if (name && f)
+		f(name);
 }
